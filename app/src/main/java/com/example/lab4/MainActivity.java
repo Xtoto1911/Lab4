@@ -9,7 +9,6 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 
-import androidx.core.app.unusedapprestrictions.IUnusedAppRestrictionsBackportCallback;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.DialogFragment;
 import android.content.DialogInterface;
@@ -35,8 +34,6 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 
-import android.os.Bundle;
-
 public class MainActivity extends AppCompatActivity {
     private final static String FILENAME = "sample.txt"; // имя файла
     private EditText mEditText;
@@ -52,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
 
         mEditText = findViewById(R.id.editText);
-        String mystring = "hello world!";
+        String mystring = "text";
         FileOutputStream fos = null;
         try {
             fos = openFileOutput(FILENAME, Context.MODE_APPEND);
@@ -60,7 +57,8 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         try {
-            fos.write(mystring.getBytes());
+            if(mEditText.getText().toString().isEmpty())
+                fos.write(mystring.getBytes());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -154,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
                 mEditText.setBackground(getDrawable(R.drawable.backgr));
             }
             else {
-                mEditText.setBackground(getDrawable(R.drawable.white));
+                mEditText.setBackground(getDrawable(R.drawable.deff));
             }
             // читаем размер шрифта из EditTextPreference
             float fSize = Float.parseFloat(prefs.getString(

@@ -2,11 +2,11 @@
 <resources>
 
     <string-array name="text_style">
+        <item>Пиксельный</item>
         <item>Обычный</item>
         <item>Полужирный</item>
         <item>Курсив</item>
         <item>Полужирный+Курсив</item>
-        <item>Пиксель</item>
     </string-array>
 
     <string-array name="text_color">
