@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="text_style">
+        <item>Обычный</item>
+        <item>Полужирный</item>
+        <item>Курсив</item>
+        <item>Полужирный+Курсив</item>
+        <item>Пиксель</item>
+    </string-array>
+
+    <string-array name="text_color">
+        <item>Черный цвет</item>
+        <item>Красный цвет</item>
+        <item>Зеленый цвет</item>
+        <item>Синий цвет</item>
+    </string-array>
+
+</resources>
